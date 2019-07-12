@@ -33,7 +33,6 @@ export default class CreateMovie extends Component {
         };
 
         if(this.movie_id) {this.getMovieData()};
-        console.log('Constructor=> movie ID: ', this.movie_id);
     }
 
     addNotification() {
@@ -118,15 +117,15 @@ export default class CreateMovie extends Component {
 
     onSubmit(e) {
         e.preventDefault();
+        console.log('movie shal be pub');
 
-
-        console.log(`Form submitted:`);
-        console.log(`Title: ${this.state.title}`);
-        console.log(`Img: ${this.state.img}`);
-        console.log(`Description: ${this.state.description}`);
-        console.log(`Director: ${this.state.director}`);
-        console.log(`Score: ${this.state.score}`);
-        console.log(`Released: ${this.state.release_date}`);
+        // console.log(`Form submitted:`);
+        // console.log(`Title: ${this.state.title}`);
+        // console.log(`Img: ${this.state.img}`);
+        // console.log(`Description: ${this.state.description}`);
+        // console.log(`Director: ${this.state.director}`);
+        // console.log(`Score: ${this.state.score}`);
+        // console.log(`Released: ${this.state.release_date}`);
 
         //if existing movie update
         if (this.state._id) {

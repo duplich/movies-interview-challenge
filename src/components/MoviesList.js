@@ -13,14 +13,24 @@ export default class MoviesList extends Component {
     }
 
     componentDidMount(){
+
+        this._isMounted = true;
+
         axios.get('http://localhost:8000/movies')
             .then((res) => {
-                console.log(res.data);
-                this.setState({ movies: res.data });
+
+                if (this._isMounted) {
+                    console.log(res.data);
+                    this.setState({ movies: res.data });
+                }
+
             })
             .catch(function (error){
             console.log(error);
         });
+    }
+    componentWillUnmount() {
+        this._isMounted = false;
     }
 
     render() {

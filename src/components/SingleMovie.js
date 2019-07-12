@@ -78,7 +78,7 @@ export default class SingleMovie extends Component {
         e.preventDefault();
         const movie_id = e.target.id;
         console.log('clicked: ', movie_id);
-        axios.get('http://localhost:8000/movies/' + 'delete/' + movie_id).then((res) => {
+        axios.get('http://localhost:8000/movies/delete/' + movie_id).then((res) => {
             console.log(res, ' Succesfully deleted');
             this.addNotification();
             setTimeout(() => {
@@ -94,7 +94,7 @@ export default class SingleMovie extends Component {
         return (
             <div className='row'>
                 <div className="col-sm-4">
-                    <img style={{maxWidth: '100%'}} src={this.state.movie.img}/>
+                    <img style={{maxWidth: '100%'}} src={this.state.movie.img} alt={this.state.movie.title}/>
                 </div>
                 <div className="col-sm-8">
                     <h2>{this.state.movie.title} ({this.getYear(this.state.movie.release_date)})</h2>
@@ -109,7 +109,7 @@ export default class SingleMovie extends Component {
                     <p className="movie-description">{this.state.movie.description}</p>
 
                     <button id={this.state.movie._id} className="btn-delete cta-btn" onClick={this.onClickDeleteMovie.bind(this)}>
-                        <img src="https://img.icons8.com/flat_round/28/000000/delete-sign.png"/> delete
+                        <img src="https://img.icons8.com/flat_round/28/000000/delete-sign.png" alt={this.state.movie.title}/> delete
                     </button>
                     {this.state.goHome ? <Redirect to="/"/> : false}
 
@@ -117,8 +117,8 @@ export default class SingleMovie extends Component {
                     <Route path="/edit/:id" component={CreateMovie}/>
 
 
-                        <Link to={'/edit/'+this.state.movie._id} className=" btn-delete cta-btn"> <img
-                            src="https://img.icons8.com/cotton/26/000000/edit--v2.png"/> Edit</Link>
+                        <Link to={'/edit/'+this.state.movie._id} className=" btn-delete cta-btn">
+                            <img src="https://img.icons8.com/cotton/26/000000/edit--v2.png" alt={''}/> Edit</Link>
 
 
                     <ReactNotification ref={this.notificationDOMRef}/>
