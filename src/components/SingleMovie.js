@@ -78,7 +78,7 @@ export default class SingleMovie extends Component {
         e.preventDefault();
         const movie_id = e.target.id;
         console.log('clicked: ', movie_id);
-        axios.get('http://localhost:8000/movies/' + "delete/" + movie_id).then((res) => {
+        axios.get('http://localhost:8000/movies/' + 'delete/' + movie_id).then((res) => {
             console.log(res, ' Succesfully deleted');
             this.addNotification();
             setTimeout(() => {
