@@ -100,7 +100,7 @@ export default class SingleMovie extends Component {
                     <h2>{this.state.movie.title} ({this.getYear(this.state.movie.release_date)})</h2>
 
                     <StarRatingComponent
-                        name={this.state.movie.title}
+                        name={this.state.movie.title + "-blah"}
                         value={this.state.movie.score}
                         starCount={5}
                         editing={false}
