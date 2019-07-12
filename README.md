@@ -1,54 +1,28 @@
-![logo_ironhack_blue 7](https://user-images.githubusercontent.com/23629340/40541063-a07a0a8a-601a-11e8-91b5-2f13e4e6b441.png)
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-# LT Interview Challenge | Movies App 
+In the project directory, you can follow the next steps in order to test the application:
 
-## Goals
-1. Apply technologies of the MERN stack. (Redux/Context is not mandatory.)
-2. Demonstrate an overall grasp of Web development fundamentals.
-3. Talk about your code during the code review.
+### STEP 1 `npm start`
 
-## Submission
-Push your code to a public repository on your GitHub account and send its URL via email. We'll check the code quality and reach out to schedule your code review.
+Runs the app in the development mode.<br>
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-## Introduction
-You are the CTO of a small disruptive startup in stealth mode with a single objective: to take down IMDB. You're hoping that your first technology decision will be an impactful one: your application will use JavaScript everywhere! JavaScript is on the rise, so what can go wrong?
+The page will reload if you make edits.<br>
+You will also see any lint errors in the console.
 
-## Technologies
 
-Your goal is to create your prototype: a simple CRUD application for movies.
-To do this, you need to:
-- Use **NodeJS and ExpressJS**.
-  (_BONUS_ points for following REST naming conventions in your URLs)
-- Use **your choice of database**.
-  (_BONUS_ points for using MongoDB)
-- Use any of the view engines (_BONUS_ points for using *handlebars*)
-- Apply **basic CSS styling**. (No page should look unstyled. Feel free to use a CSS component library like Bootstrap or Materialize or any other.)
-- Show **validation feedback** when a form is submitted incorrectly.
+### STEP 2: `cd movies-backend && npm start`
+Start the Backend based on the Express enginge that connects to the `mongodb://localhost:27017/movies`
 
-## Features
+Open [http://localhost:8000](http://localhost:8000) to view the backend it in the browser. (you will need the json parser if you want to see some useful information :)
 
-Your application should have the following **features**:
-1. You should have registered users:
-    - they will use email and password to authenticate themselves,
-    - they will have to input their full name when signing in.
-    - _BONUS_ - feel free to use any of the social strategies to authenticate users.
-2. Users should be able to **add/create new movies**.
-3. Users should be able to **see the list of 20 most recent movies**.
-  (_BONUS_ points for implementing pagination)
-3. Users should be able to **see the details page of each movie**.
-4. Users should be able to **update existing movies**.
-5. Users should be able to **delete movies**.
 
-The **schema for a movie** should include:
-- title
-- poster image URL (_BONUS_ points for allowing image file uploads)
-- director
-- release date
-- score (1 to 10)
-- plot description
+### STEP 3: `mongod`
+Start the mongo database server
 
-<br>
+### STEP 4: `mongo`
+Start the mongo database. 
 
-Happy coding!
-
-*The Ironhack Team*  :heart: 
+##Extras
+The fixture file  file can be found in `movies-backend/movies.json`
+THis file can be imported into the database for easier testing of the app
